@@ -33,6 +33,17 @@ namespace ust_demo_api
             services.AddDbContext<UstDemoDbContext>();
             services.AddScoped<IReminderRepository, ReminderRepository>();
             services.AddScoped<IReminderLogic, ReminderLogic>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                          //.AllowCredentials();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +64,8 @@ namespace ust_demo_api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors("CorsPolicy");
         }
     }
 }
