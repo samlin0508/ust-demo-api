@@ -5,9 +5,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiProxyService {
+
   constructor(private httpClient: HttpClient) { }
 
-  public getAllReminders() {
-    return this.httpClient.get("https://localhost:5001/api/reminder/");
+  public getAllReminders(){
+    return this.httpClient.get("https://localhost:5001/api/reminder");
   }
 }

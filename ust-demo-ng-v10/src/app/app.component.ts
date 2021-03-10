@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiProxyService} from './api-proxy.service'
+import { ApiProxyService } from './api-proxy.service'
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,12 @@ import { ApiProxyService} from './api-proxy.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ust-demo-ng';
+  title = 'ust-demo-ng-v10';
 
   constructor(private apiProxyService: ApiProxyService) { }
 
   ngOnInit() {
+
     this.apiProxyService.getAllReminders().subscribe((data: any[])=>{
       console.log(data);
     })  

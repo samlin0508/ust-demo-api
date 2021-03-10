@@ -29,11 +29,6 @@ namespace ust_demo_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddDbContext<UstDemoDbContext>();
-            services.AddScoped<IReminderRepository, ReminderRepository>();
-            services.AddScoped<IReminderLogic, ReminderLogic>();
-
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policy =>
@@ -41,9 +36,12 @@ namespace ust_demo_api
                     policy.AllowAnyOrigin()
                           .AllowAnyHeader()
                           .AllowAnyMethod();
-                          //.AllowCredentials();
                 });
             });
+            services.AddControllers();
+            services.AddDbContext<UstDemoDbContext>();
+            services.AddScoped<IReminderRepository, ReminderRepository>();
+            services.AddScoped<IReminderLogic, ReminderLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,14 +56,14 @@ namespace ust_demo_api
 
             app.UseRouting();
 
+            app.UseCors("CorsPolicy");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-
-            app.UseCors("CorsPolicy");
         }
     }
 }
