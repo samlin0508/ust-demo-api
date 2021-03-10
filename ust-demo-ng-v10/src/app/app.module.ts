@@ -4,15 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReminderViewerComponent } from './reminder-viewer/reminder-viewer.component';
+import { ReminderContainerComponent } from './reminder-container/reminder-container.component';
+import { AddReminderContainerComponent } from './add-reminder-container/add-reminder-container.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReminderViewerComponent,
+    ReminderContainerComponent,
+    AddReminderContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

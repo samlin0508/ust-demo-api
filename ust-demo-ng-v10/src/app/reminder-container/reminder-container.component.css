@@ -1,0 +1,28 @@
+.reminder-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid silver;
+    background-color: silver;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.reminder-container .summary-caption {
+    color: gray;
+}
+
+.reminder-container .summary {
+    margin: 0px;
+}
+
+.reminder-container .description-caption {
+    color: gray;
+    margin-top: 20px;
+}
+.reminder-container .description {
+    margin: 0px;
+}

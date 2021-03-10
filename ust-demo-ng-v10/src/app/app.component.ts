@@ -1,20 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiProxyService } from './api-proxy.service'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'ust-demo-ng-v10';
 
-  constructor(private apiProxyService: ApiProxyService) { }
-
-  ngOnInit() {
-
-    this.apiProxyService.getAllReminders().subscribe((data: any[])=>{
-      console.log(data);
-    })  
-  }
+  constructor() { }
 }

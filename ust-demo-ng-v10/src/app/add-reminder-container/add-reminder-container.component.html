@@ -1,0 +1,9 @@
+<div class="add-reminder-container">
+    <div class="summary-caption">Summary:</div>
+    <textarea class="summary" type="text" value="" [(ngModel)]="reminder.summary" rows="1"></textarea>
+    <div class="description-caption">Descripion:</div>
+    <textarea class="description" type="text" value="" [(ngModel)]="reminder.description" rows="10"></textarea>
+    <div class="action-container">
+        <button class="add" (click)="onAddClick()">Add</button>
+    </div>
+</div>

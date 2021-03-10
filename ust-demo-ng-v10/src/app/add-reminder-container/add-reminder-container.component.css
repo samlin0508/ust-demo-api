@@ -1,0 +1,42 @@
+.add-reminder-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.add-reminder-container .summary-caption {
+    color: gray;
+    text-align: left;
+    width: 80%;
+}
+
+.add-reminder-container .summary {
+    margin: 0px;
+    width: 80%;
+}
+
+.add-reminder-container .description-caption {
+    color: gray;
+    margin-top: 20px;
+    text-align: left;
+    width: 80%;
+}
+
+.add-reminder-container .description {
+    margin: 0px;
+    width: 80%;
+}
+
+.add-reminder-container .action-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.add-reminder-container .add {
+}
