@@ -17,4 +17,12 @@ export class ApiProxyService {
   public postReminder(reminder: Reminder){
     return this.httpClient.post<Reminder>("https://localhost:5001/api/reminder", reminder);
   }
+
+  public deleteReminder(id: number){
+    return this.httpClient.delete("https://localhost:5001/api/reminder/" + id);
+  }
+
+  public putReminder(reminder: Reminder){
+    return this.httpClient.put<Reminder>("https://localhost:5001/api/reminder/" + reminder.id, reminder);
+  }
 }

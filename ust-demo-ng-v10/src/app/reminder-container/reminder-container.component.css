@@ -11,6 +11,34 @@
     cursor: pointer;
 }
 
+.reminder-container .action-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.reminder-container .action-container .delete,
+.reminder-container .action-container .edit,
+.reminder-container .action-container .save {
+    font-size: 12px;
+    background: white;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 10px;
+}
+
+.reminder-container .action-container .delete:hover,
+.reminder-container .action-container .edit:hover,
+.reminder-container .action-container .save:hover {
+    background: gray;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+}
+
 .reminder-container .summary-caption {
     color: gray;
 }
