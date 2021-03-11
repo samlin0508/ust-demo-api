@@ -22,38 +22,43 @@ namespace ust_demo_api.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Reminder> Get()
+        public ActionResult<IList<Reminder>> Get()
         {
-            return _reminderLogic.RetrieveAll();
+            return Ok(_reminderLogic.RetrieveAll());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Reminder Get(int id)
+        public ActionResult<Reminder> Get(int id)
         {
-            return _reminderLogic.RetrieveById(id);
+            var result = _reminderLogic.RetrieveById(id);
+            if (result == null) return NotFound();
+            return Ok();
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Reminder value)
+        public ActionResult Post([FromBody] Reminder value)
         {
             _reminderLogic.Create(value);
+            return Ok();
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Reminder value)
+        public ActionResult Put(int id, [FromBody] Reminder value)
         {
             value.Id = id;
             _reminderLogic.Update(value);
+            return Ok();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
             _reminderLogic.DeleteById(id);
+            return Ok();
         }
     }
 }
