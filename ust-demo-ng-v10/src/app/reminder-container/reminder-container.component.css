@@ -9,6 +9,8 @@
     padding: 10px;
     margin: 10px;
     width: 300px;
+    min-height: 300px;
+    max-height: 500px;
 }
 
 .reminder-container .action-container {
@@ -63,6 +65,8 @@
 
 .reminder-container .description {
     margin: 0px;
+    width: 100%;
+    overflow: scroll;
 }
 
 .reminder-container .description-edit {
