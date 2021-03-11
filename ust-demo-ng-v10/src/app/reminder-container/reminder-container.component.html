@@ -3,12 +3,13 @@
         <span class="delete" (click)="onDeleteClick()">Delete</span>
         <span class="edit" (click)="onEditClick()">Edit</span>
         <span class="save" *ngIf="!viewMode" (click)="onSaveClick()">Save</span>
+        <span class="cancel" *ngIf="!viewMode" (click)="onCancelClick()">Cancel</span>
     </div>
     <span class="summary-caption">Summary:</span>
     <h2 class="summary" *ngIf="viewMode">{{reminder.summary}}</h2>
-    <textarea class="summary" *ngIf="!viewMode" type="text" value="" [(ngModel)]="reminder.summary" rows="1"></textarea>
+    <textarea class="summary-edit" *ngIf="!viewMode" type="text" value="" [(ngModel)]="reminder.summary" rows="1"></textarea>
 
     <span class="description-caption">Descripion:</span>
     <p class="description" *ngIf="viewMode">{{reminder.description}}</p>
-    <textarea class="description" *ngIf="!viewMode" type="text" value="" [(ngModel)]="reminder.description" rows="10"></textarea>
+    <textarea class="description-edit" *ngIf="!viewMode" type="text" value="" [(ngModel)]="reminder.description" rows="20"></textarea>
 </div>

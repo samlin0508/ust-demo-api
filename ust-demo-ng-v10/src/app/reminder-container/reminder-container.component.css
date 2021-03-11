@@ -8,7 +8,7 @@
     border-radius: 5px 5px 5px 5px;
     padding: 10px;
     margin: 10px;
-    cursor: pointer;
+    width: 300px;
 }
 
 .reminder-container .action-container {
@@ -21,18 +21,21 @@
 
 .reminder-container .action-container .delete,
 .reminder-container .action-container .edit,
-.reminder-container .action-container .save {
+.reminder-container .action-container .save,
+.reminder-container .action-container .cancel {
     font-size: 12px;
     background: white;
     padding: 5px;
     border: 1px solid white;
     border-radius: 5px 5px 5px 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .reminder-container .action-container .delete:hover,
 .reminder-container .action-container .edit:hover,
-.reminder-container .action-container .save:hover {
+.reminder-container .action-container .save:hover,
+.reminder-container .action-container .cancel:hover {
     background: gray;
     padding: 5px;
     border: 1px solid gray;
@@ -47,10 +50,23 @@
     margin: 0px;
 }
 
+.reminder-container .summary-edit {
+    margin: 0px;
+    width: 93%;
+    padding: 10px;
+}
+
 .reminder-container .description-caption {
     color: gray;
     margin-top: 20px;
 }
+
 .reminder-container .description {
     margin: 0px;
+}
+
+.reminder-container .description-edit {
+    margin: 0px;
+    width: 93%;
+    padding: 10px;
 }

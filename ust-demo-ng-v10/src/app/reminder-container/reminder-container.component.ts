@@ -32,4 +32,8 @@ export class ReminderContainerComponent implements OnInit {
       window.location.href = "reminder-viewer";
     });
   }
+
+  onCancelClick(): void {
+    this.viewMode = true;
+  }
 }

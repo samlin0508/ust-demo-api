@@ -1,5 +1,19 @@
-.go-to-add-reminder {
+.go-to-add-reminder,
+.go-to-reminder-viewer {
+    color: black;
+    font-size: 12px;
+    background: silver;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 10px;
+    text-decoration: none;
+}
 
+.go-to-add-reminder:hover,
+.go-to-reminder-viewer:hover {
+    background: gray;
+    border: 1px solid gray;
 }
 
 .go-to-reminder-viewer {
