@@ -11,6 +11,7 @@ using ust_demo_api.Models;
 namespace ust_demo_api.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class ReminderController : Controller
     {
         private readonly IReminderLogic _reminderLogic;
@@ -32,7 +33,7 @@ namespace ust_demo_api.Controllers
         public ActionResult<Reminder> Get(int id)
         {
             var result = _reminderLogic.RetrieveById(id);
-            if (result == null) return NotFound();
+            if (result == null) return NoContent();
             return Ok(result);
         }
 

@@ -14,6 +14,7 @@ using ust_demo_api.Models;
 using Pomelo.EntityFrameworkCore;
 using ust_demo_api.Repositories;
 using ust_demo_api.BusinessLogics;
+using ust_demo_api.Extensions;
 
 namespace ust_demo_api
 {
@@ -47,10 +48,12 @@ namespace ust_demo_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+
+            app.UseExceptionHandlingMiddleware();
 
             app.UseHttpsRedirection();
 
