@@ -33,7 +33,7 @@ namespace ust_demo_api.Controllers
         {
             var result = _reminderLogic.RetrieveById(id);
             if (result == null) return NotFound();
-            return Ok();
+            return Ok(result);
         }
 
         // POST api/values
