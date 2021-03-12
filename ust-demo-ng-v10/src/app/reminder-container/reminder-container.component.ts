@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Reminder } from '../reminder';
 import { ApiProxyService } from '../api-proxy.service';
+import { ReminderViewerComponent } from '../reminder-viewer/reminder-viewer.component';
 
 @Component({
   selector: 'reminder-container',
@@ -9,6 +10,7 @@ import { ApiProxyService } from '../api-proxy.service';
 })
 export class ReminderContainerComponent implements OnInit {
   @Input() reminder: Reminder;
+  @Input() parent: ReminderViewerComponent;
   viewMode: boolean = true;
 
   constructor(private apiProxyService: ApiProxyService) { }
@@ -18,7 +20,7 @@ export class ReminderContainerComponent implements OnInit {
 
   onDeleteClick(): void {
     this.apiProxyService.deleteReminder(this.reminder.id).subscribe(() => {
-      window.location.href = "reminder-viewer";
+      this.parent.getAllReminders();
     });
   }
 
@@ -29,7 +31,7 @@ export class ReminderContainerComponent implements OnInit {
   onSaveClick(): void {
     this.apiProxyService.putReminder(this.reminder).subscribe(() => {
       this.viewMode = true;
-      window.location.href = "reminder-viewer";
+      this.parent.getAllReminders();
     });
   }
 

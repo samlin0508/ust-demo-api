@@ -12,8 +12,12 @@ export class ReminderViewerComponent implements OnInit {
   constructor(private apiProxyService: ApiProxyService) { }
 
   ngOnInit() {
+    this.getAllReminders();
+  }
+
+  public getAllReminders() {
     this.apiProxyService.getAllReminders().subscribe((data: any[])=>{
       this.reminders = data;
-    })  
+    }) 
   }
 }
